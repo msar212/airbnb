@@ -1,16 +1,17 @@
-import { useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom"
 import routes from '@/router'
+
+import MyHeader from '@/components/app-header'
 
 function App() {
   return (
     <>
-      <header className='header'>header</header>
+      <MyHeader />
       <main className='page'>
         {useRoutes(routes)}
       </main>
-      <footer className='footer'>footer</footer>
     </>
-  );
+  )
 }
 
 export default App
