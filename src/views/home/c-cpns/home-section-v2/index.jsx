@@ -21,8 +21,8 @@ const HomeSectionV2 = memo((props) => {
 
   return (
     <HomeSectionV2Wrapper>
-      <SectionTabs tabs={tabs} tabClick={tabClick} />
       <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle} />
+      <SectionTabs tabs={tabs} tabClick={tabClick} />
       <SectionRooms roomList={discountInfo.dest_list?.[tabName]} itemWidth='33.333%' />
     </HomeSectionV2Wrapper>
   )

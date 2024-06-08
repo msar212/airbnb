@@ -8,15 +8,19 @@ import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from "./c-cpns/home-section-v2"
 
 import { isEmptyO } from '@/utils'
+import HomeLongfor from './c-cpns/home-longfor'
+import HomeSectionV3 from './c-cpns/home-section-v3'
 
 
 export default memo(() => {
-  const { goodPriceInfo, highScoreInfo, discountInfo, hotrecommenddestInfo } = useSelector(state => ({
-    goodPriceInfo: state.home.goodPriceInfo,
-    highScoreInfo: state.home.highScoreInfo,
-    discountInfo: state.home.discountInfo,
-    hotrecommenddestInfo: state.home.hotrecommenddestInfo,
-  }), shallowEqual)
+const { goodPriceInfo, highScoreInfo, discountInfo, hotrecommenddestInfo, longforInfo, plusInfo } = useSelector(state => ({
+  goodPriceInfo: state.home.goodPriceInfo,
+  highScoreInfo: state.home.highScoreInfo,
+  discountInfo: state.home.discountInfo,
+  hotrecommenddestInfo: state.home.hotrecommenddestInfo,
+  longforInfo: state.home.longForInfo,
+  plusInfo: state.home.plusInfo,
+}), shallowEqual)
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -30,7 +34,9 @@ export default memo(() => {
           { isEmptyO(discountInfo) && <HomeSectionV2 discountInfo={discountInfo}/>}
           { isEmptyO(hotrecommenddestInfo) && <HomeSectionV2 discountInfo={hotrecommenddestInfo}/>}
           { isEmptyO(goodPriceInfo) && <HomeSectionV1 initData={goodPriceInfo}/> }
+          { isEmptyO(longforInfo) && <HomeLongfor infoData={longforInfo}/> }
           { isEmptyO(highScoreInfo) && <HomeSectionV1 initData={highScoreInfo}/> }
+          { isEmptyO(plusInfo) && <HomeSectionV3 infoData={plusInfo}/> }
         </div>
     </HomeWrapper>
   )
