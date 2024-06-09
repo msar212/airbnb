@@ -1,8 +1,12 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { PicturesWrapper } from './style'
+import PictureBrowser from '@/base-ui/picture-browser'
 
 const DetailPictures = memo(() => {
+  /* 定义组件内部的状态 */
+  const [showBrowser, setShowBrowser] = useState(false)
+
   /* redux获取数据 */
   const { detailInfo } = useSelector((state) => ({
     detailInfo: state.detail.detailInfo
@@ -30,6 +34,13 @@ const DetailPictures = memo(() => {
           }
         </div>
       </div>
+      <div className='show-btn' onClick={e => setShowBrowser(true)}>显示照片</div>
+      { showBrowser && (
+        <PictureBrowser
+          pictureUrls={detailInfo.picture_urls} 
+          closeClick={e => setShowBrowser(false)}
+        /> 
+      )}
     </PicturesWrapper>
   )
 })
