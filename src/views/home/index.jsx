@@ -1,13 +1,15 @@
 import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+
 import { fetchHomeDataAction } from '@/store/features/home'
+import { changeHeaderConfigAction } from '@/store/features/main'
+
+import { isEmptyO } from '@/utils'
 
 import { HomeWrapper } from "./style"
 import HomeBanner from "./c-cpns/home-banner"
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from "./c-cpns/home-section-v2"
-
-import { isEmptyO } from '@/utils'
 import HomeLongfor from './c-cpns/home-longfor'
 import HomeSectionV3 from './c-cpns/home-section-v3'
 
@@ -25,6 +27,7 @@ const { goodPriceInfo, highScoreInfo, discountInfo, hotrecommenddestInfo, longfo
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchHomeDataAction())
+    dispatch(changeHeaderConfigAction({ isFixed: true }))
   }, [dispatch])
 
   return (

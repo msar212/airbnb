@@ -21,16 +21,16 @@ const theme1 = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
-      <BrowserRouter>
-        <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <ThemeProvide theme={theme1}>
-              <App />
-            </ThemeProvide>
-          </ThemeProvider>
-        </Provider>
-      </BrowserRouter>
-    </Suspense>
+    <Provider store={store}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+              <ThemeProvide theme={theme1}>
+                <App />
+              </ThemeProvide>
+            </ThemeProvider>
+        </BrowserRouter>
+      </Suspense>
+    </Provider>
   </React.StrictMode>
 )

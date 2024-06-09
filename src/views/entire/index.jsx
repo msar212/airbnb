@@ -7,12 +7,14 @@ import EntireRooms from './c-cpns/entire-rooms'
 import EntirePagination from './c-cpns/entire-pagination'
 
 import { fetchRoomListAction } from '@/store/features/entire/createActions'
+import { changeHeaderConfigAction } from '@/store/features/main'
 
 
 export default function Entire() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchRoomListAction())
+    dispatch(changeHeaderConfigAction({ isFixed: true }))
   }, [dispatch])
 
   return (
