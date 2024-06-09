@@ -1,25 +1,37 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
+import classNames from 'classnames'
 
-import { HeaderWrapper } from './style'
+import { HeaderWrapper, SearchAreaWrapper } from './style'
 import HeaderLeft from './c-cpns/header-left'
 import HeaderCenter from './c-cpns/header-center'
 import HeaderRight from './c-cpns/header-right'
-import classNames from 'classnames'
+
 
 export default memo(() => {
+  /* 定义组件内部的状态 */
+  const [isSearch, setIsSearch] = useState(false)
+
   /* 从redux中获取数据 */
-  const { headerConfig } = useSelector((state) => ({
-    headerConfig: state.main.headerConfig
-  }), shallowEqual)
+  const { headerConfig } = useSelector(
+    state => ({
+      headerConfig: state.main.headerConfig
+    }),
+    shallowEqual
+  )
   const { isFixed } = headerConfig
-  console.log(isFixed)
 
   return (
-    <HeaderWrapper className={classNames({fixed: isFixed})}>
-      <HeaderLeft></HeaderLeft>
-      <HeaderCenter></HeaderCenter>
-      <HeaderRight></HeaderRight>
+    <HeaderWrapper className={classNames({ fixed: isFixed })}>
+      <div className='content'>
+        <div className='top'>
+          <HeaderLeft />
+          <HeaderCenter isSearch={isSearch} searchBarClick={e => setIsSearch(true)} />
+          <HeaderRight />
+        </div>
+        <SearchAreaWrapper isSearch={isSearch}/>
+      </div>
+      { isSearch && <div className='cover' onClick={e => setIsSearch(false)}></div> }
     </HeaderWrapper>
   )
 })
