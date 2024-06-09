@@ -1,10 +1,13 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const LeftWrapper = styled.div`
+export const LeftWrapper = styled.div`
   flex: 1;
-  color: #FF385C;
+  display: flex;
+  align-items: center;
+  color: ${props => props.theme.isAlpha ? "#fff": props.theme.color.primaryColor};
+  
+  .logo {
+    margin-left: 24px;
+    cursor: pointer;
+  }
 `
-
-export {
-  LeftWrapper
-}

@@ -5,13 +5,14 @@ const mainSlice = createSlice({
   name: "main",
   initialState: {
     headerConfig: {
+      topAlpha: false,
       isFixed: false,
     }
   },
   reducers: {
     changeHeaderConfigAction(state, { payload }) {
       state.headerConfig = payload
-    }
+    },
   }
 })
 

@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 
 export const HeaderWrapper = styled.div`
-
   &.fixed {
     position: fixed;
     z-index: 99;
@@ -14,6 +13,7 @@ export const HeaderWrapper = styled.div`
   .content {
     position: relative;
     z-index: 19;
+    padding: 0 80px;
     transition: all 250ms ease;
     background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,0)": "rgba(255,255,255,1)"};
     border-bottom: 1px solid #eee;
