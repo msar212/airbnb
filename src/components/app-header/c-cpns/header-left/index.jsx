@@ -14,7 +14,7 @@ export default memo(() => {
 
   return (
     <LeftWrapper>
-      <div className="log" onClick={logoClickHandle}>
+      <div className="logo" onClick={logoClickHandle}>
         <IconLogo />
       </div>
     </LeftWrapper>

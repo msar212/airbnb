@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from "styled-components"
+
 
 export const RightWrapper = styled.div`
   flex: 1;
@@ -12,8 +13,7 @@ export const RightWrapper = styled.div`
   .btns {
     display: flex;
     box-sizing: content-box;
-    color: ${props =>
-      props.theme.isAlpha ? '#fff' : props.theme.text.primaryColor};
+    color: ${props => props.theme.isAlpha ? "#fff": props.theme.text.primaryColor};
 
     .btn {
       height: 18px;
@@ -24,8 +24,7 @@ export const RightWrapper = styled.div`
       box-sizing: content-box;
 
       &:hover {
-        background-color: ${props =>
-          props.theme.isAlpha ? 'rgba(255,255,255,.1)' : '#f5f5f5'};
+        background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,.1)": "#f5f5f5"};
       }
     }
   }
@@ -54,11 +53,10 @@ export const RightWrapper = styled.div`
       width: 240px;
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 6px rgba(0,0,0,.2);
       color: #666;
 
-      .top,
-      .bottom {
+      .header-top, .bottom {
         padding: 10px 0;
 
         .item {
@@ -72,7 +70,7 @@ export const RightWrapper = styled.div`
         }
       }
 
-      .top {
+      .header-top {
         border-bottom: 1px solid #ddd;
       }
     }

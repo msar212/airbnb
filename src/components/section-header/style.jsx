@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const HeaderWrapper = styled.div`
   color: #222;
 
@@ -11,6 +12,6 @@ export const HeaderWrapper = styled.div`
 
   .subtitle {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
   }
 `
