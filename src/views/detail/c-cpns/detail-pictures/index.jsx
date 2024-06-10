@@ -1,7 +1,9 @@
 import React, { memo, useState } from 'react'
 import { useSelector } from 'react-redux'
+
 import { PicturesWrapper } from './style'
 import PictureBrowser from '@/base-ui/picture-browser'
+
 
 const DetailPictures = memo(() => {
   /* 定义组件内部的状态 */

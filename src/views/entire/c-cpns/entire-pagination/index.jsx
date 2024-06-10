@@ -19,7 +19,7 @@ const EntirePagination = memo((props) => {
   const startCount = currentPage * 20 + 1
   const endCount = (currentPage + 1) * 20
 
-  /** 事件处理的逻辑 */
+  /* 事件处理的逻辑 */
   const dispatch = useDispatch()
   function pageChangeHandle(event, pageCount) {
     // 回到顶部

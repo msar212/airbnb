@@ -1,18 +1,21 @@
-import PropTypes from 'prop-types'
 import React, { memo, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { CSSTransition, SwitchTransition } from "react-transition-group"
+import classNames from 'classnames'
+
+import { BrowserWrapper } from './style'
+import Indicator from '../indicator'
 
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
 import IconArrowRight from '@/assets/svg/icon-arrow-right'
 import IconClose from '@/assets/svg/icon-close'
-import { BrowserWrapper } from './style'
 import IconTriangleArrowBottom from '@/assets/svg/icon-triangle-arrow-bottom'
-import Indicator from '../indicator'
-import classNames from 'classnames'
 import IconTriangleArrowTop from '@/assets/svg/icon-triangle-arrow-top'
+
 
 const PictureBrowser = memo((props) => {
   const { pictureUrls, closeClick } = props
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isNext, setIsNext] = useState(true)
   const [showList, setShowList] = useState(true)
@@ -25,7 +28,7 @@ const PictureBrowser = memo((props) => {
     }
   }, [])
 
-  /** 事件监听的逻辑 */
+  /* 事件监听的逻辑 */
   function closeBtnClickHandle() {
     if (closeClick) closeClick()
   }

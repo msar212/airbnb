@@ -1,19 +1,23 @@
-import PropTypes from 'prop-types'
 import React, { memo, useRef, useState } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+
 import { Rating } from '@mui/material'
-import { ItemWrapper } from './style'
 import { Carousel } from 'antd'
+
 import IconArrowLeft from '@/assets/svg/icon-arrow-left'
 import IconArrowRight from '@/assets/svg/icon-arrow-right'
+
+import { ItemWrapper } from './style'
 import Indicator from '@/base-ui/indicator'
-import classNames from 'classnames'
+
 
 const RoomItem = memo(props => {
   const { itemData, itemWidth = '25%', itemClick } = props
   const [selectIndex, setSelectIndex] = useState(0)
   const sliderRef = useRef()
 
-  /** 事件处理的逻辑 */
+  /* 事件处理的逻辑 */
   function controlClickHandle (isRight = true, event) {
     // 上一个面板/下一个面板
     isRight ? sliderRef.current.next() : sliderRef.current.prev()

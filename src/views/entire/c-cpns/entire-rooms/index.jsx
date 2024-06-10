@@ -16,7 +16,7 @@ const EntireRooms = memo((props) => {
     isLoading: state.entire.isLoading
   }), shallowEqual)
 
-  /** 事件处理 */
+  /* 事件处理 */
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const itemClickHandle = useCallback((item) => {
@@ -26,7 +26,7 @@ const EntireRooms = memo((props) => {
 
   return (
     <RoomsWrapper>
-      <h2 className='title'>{totalCount}多处住所</h2>
+      <h2 className='title'>{totalCount} 多处住所</h2>
       <div className='list'>
         {
           roomList.map((item) => {
